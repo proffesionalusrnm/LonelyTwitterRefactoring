@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.lonelytwitternomoreLAB9;
 
 import java.io.IOException;
 import java.io.Serializable;

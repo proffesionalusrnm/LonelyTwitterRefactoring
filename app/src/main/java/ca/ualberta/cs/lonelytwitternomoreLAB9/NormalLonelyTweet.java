@@ -1,23 +1,28 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.lonelytwitternomoreLAB9;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
-public class NormalLonelyTweet implements Serializable {
+public class NormalLonelyTweet extends Tweet implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	protected Date tweetDate;
-	protected String tweetBody;
+    private static final long serialVersionUID = 1L;
 
-	public NormalLonelyTweet() {
-	}
 
-	public NormalLonelyTweet(String text, Date date) {
-		this.tweetDate = date;
-		this.tweetBody = text;
-	}
+    public NormalLonelyTweet(String text, Date date) {
+        this.tweetDate = date;
+        this.tweetBody = text;
+    }
 
+    public boolean isValid() {
+        if (tweetBody.trim().length() == 0
+                || tweetBody.trim().length() > 10) {
+            return false;
+        }
+        return true;
+    }
+}
+/*
 	public Date getTweetDate() {
 		return tweetDate;
 	}
@@ -45,11 +50,7 @@ public class NormalLonelyTweet implements Serializable {
 		tweetBody = (String) in.readObject();
 	}
 
-	public boolean isValid() {
-		if (tweetBody.trim().length() == 0
-				|| tweetBody.trim().length() > 10) {
-			return false;
-		}
+
 
 		return true;
 	}
@@ -58,4 +59,4 @@ public class NormalLonelyTweet implements Serializable {
 	public String toString() {
 		return getTweetDate() + " | " + getTweetBody() ;
 	}
-}
+*/
